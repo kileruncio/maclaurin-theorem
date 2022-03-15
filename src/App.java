@@ -1,9 +1,10 @@
 import java.math.BigDecimal;
 import java.util.Scanner;
 import javax.swing.JFrame;
+
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.geom.Line2D;
+// import java.awt.Graphics2D;
+// import java.awt.geom.Line2D;
 
 public class App extends JFrame{
 
@@ -28,14 +29,12 @@ public class App extends JFrame{
     }
 
     void drawGraph(Graphics g, BigDecimal a, BigDecimal b){
-        Graphics2D g2d = (Graphics2D)g;
-
-        g2d.drawLine(x1, y1, x2, y2);
+        g.drawLine(a.intValue(), a.intValue(), b.intValue(), b.intValue());
     }
 
     public void paint(Graphics g){
         super.paint(g);
-        // drawGraph(g);
+        // drawGraph(g, drawA, drawB);
     }
 
     public static BigDecimal getFormula(double x, int n){
