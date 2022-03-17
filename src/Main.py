@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from cProfile import label
 import matplotlib.pyplot as plt
 import numpy as np
 import Logic as l
