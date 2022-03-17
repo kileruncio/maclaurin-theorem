@@ -19,7 +19,7 @@ logic = l.Logic()
 workN = 1
 n = input("Podaj n ")
 fun = input("Podaj sin lub cos ")
-space = np.linspace(-np.pi*5, np.pi*5, 200)
+space = np.linspace(-np.pi*5, np.pi*5, 400)
 # print('Blad wynosi: ', l.Logic.errorsin(n))
 
 #drawing axes
@@ -32,7 +32,7 @@ ax.spines['top'].set_color('none')
 ax.xaxis.set_ticks_position('bottom')
 ax.yaxis.set_ticks_position('left')
 ax.set_xlim(-np.pi*5, np.pi*5)
-ax.set_ylim(-5, 5)
+ax.set_ylim(-10, 10)
 
 #drawing sin or cos
 if fun == "sin":
@@ -50,16 +50,15 @@ print("n: " + n + " funkcja: " + fun)
 #drawing maclaurin's
 if fun == "sin":
     print('Blad wynosi: ', logic.errorsin(n))
-    # print("Blad wynosi: " + error)
-    y = logic.sin(n*workN)
+    y = logic.sin(n*workN, space)
     print(y)
-    plt.plot(space, y, 'g-', label='approximation')
+    plt.plot(space, y, 'g-', label=f"approximation to {n}")
 elif fun == "cos":
     print('Blad wynosi: ',  logic.erroscos(n))
     # space = np.linspace(-np.pi*15,np.pi*15,1000)
-    y = logic.cos(n*workN)
+    y = logic.cos(n*workN, space)
     print(y)
-    plt.plot(space, y, 'g-', label='approximation')
+    plt.plot(space, y, 'g-', label=f"approximation to {n}")
 
 plt.legend(loc='upper left')
 plt.show()
