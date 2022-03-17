@@ -13,15 +13,13 @@ class Logic:
             w = -1
 
             for i in range(1, a):
-                # if i%2 == 0:
-                    # q -= ((0*pow(x,i))/factorial(i))
-                if i%2 == 1:#else:
-                    q = ((w*math.sin(pi/2)*pow(x,i))/factorial(i))
+                if i%2 == 1:
+                    q += ((w*pow(x,i))/factorial(i))
                     if w < 0:
                         w = 1
                     else:
                         w = -1
-            y.append(q)
+            y.append(-q)
         return y
 
     #maclaren cosinus
@@ -46,10 +44,14 @@ class Logic:
     #errors
     def errorsin(self, n):
         a = int(n)
-        if a%2 == 1:
-            return abs(pow(pi, a+3)/factorial(a+2))
-        else:
-            return abs(pow(pi, a+2)/factorial(a+1))
+        try:
+            if a%2 == 1:
+                return abs(pow(pi, a+3)/factorial(a+2))
+            else:
+                return abs(pow(pi, a+2)/factorial(a+1))
+        except OverflowError:
+            print(f"Jezyk nie radzi sobie z tak duza liczba jak {a}")
+            exit(0)
 
     def erroscos(self, n):
         a = int(n)
