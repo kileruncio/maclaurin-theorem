@@ -5,8 +5,8 @@ import Logic as l
 
 logic = l.Logic()
 workN = 1
-n = input("Podaj n: ")
-fun = input("Podaj sin lub cos: ")
+n = input("Provide n: ")
+fun = input("Choose sin or cos: ")
 space = np.linspace(-np.pi*5, np.pi*5, 400)
 
 #drawing axes
@@ -29,19 +29,19 @@ elif fun == "cos":
     y = np.cos(space)
     plt.plot(space, y, 'b-', label='cos(x)')
 else:
-    print("Niedozwolona wartosc")
+    print("You can provide only sin or cos, nothing else")
     exit(0)
 
-print(f"n: {n} funkcja: {fun}")
+print(f"n: {n} function: {fun}")
 
 #drawing maclaurin's
 if fun == "sin":
-    print('Blad wynosi: ', logic.errorsin(n))
+    print('Value of error: ', logic.errorsin(n))
     y = logic.sin(n*workN, space)
     print(y)
     plt.plot(space, y, 'g-', label=f"approximation to {n}")
 elif fun == "cos":
-    print('Blad wynosi: ',  logic.erroscos(n))
+    print('Value of error: ',  logic.erroscos(n))
     y = logic.cos(n*workN, space)
     print(y)
     plt.plot(space, y, 'g-', label=f"approximation to {n}")

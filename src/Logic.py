@@ -1,6 +1,5 @@
 from math import factorial, pi
 import math
-import numpy as np
 
 class Logic:
     #maclaren sinus
@@ -10,7 +9,7 @@ class Logic:
 
         for x in space:
             q = math.sin(0)
-            w = -1
+            w = 1
 
             for i in range(1, a):
                 if i%2 == 1:
@@ -19,17 +18,17 @@ class Logic:
                         w = 1
                     else:
                         w = -1
-            y.append(-q)
+            y.append(q)
         return y
 
     #maclaren cosinus
     def cos(self, n, space):
         a = int(n)
         y = []
-        w = -1
 
         for x in space:
             q = math.cos(0)
+            w = -1
 
             for i in range(1, a):
                 if i%2 == 0:
@@ -50,7 +49,7 @@ class Logic:
             else:
                 return abs(pow(pi, a+2)/factorial(a+1))
         except OverflowError:
-            print(f"Jezyk nie radzi sobie z tak duza liczba jak {a}")
+            print(f"The number {a} is too big, sorry")
             exit(0)
 
     def erroscos(self, n):

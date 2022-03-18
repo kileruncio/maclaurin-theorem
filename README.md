@@ -1,16 +1,15 @@
 ## What it is
 
-Application to calculate and draw Maclaurin's theorem with precision represented by `n`
+Application to calculate and draw Maclaurin's theorem for `sin(x)` and `cos(x)` with precision represented by `n`
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
+## What is here
 
 - `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies, it means nothing
+- `Main.exe`: ready to run on Windows vesion of the code
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+>I don't know shit about python
+>Sometimes weird things happen. If you want you can tell me about them
 
-## Dependency Management
+## What is the reason
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+I had to do this for my class at uni, feel free to use it
