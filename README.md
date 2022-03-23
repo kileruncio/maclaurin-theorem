@@ -1,4 +1,4 @@
-## What it is
+## What is it
 
 Application to calculate and draw Maclaurin's theorem for `sin(x)` and `cos(x)` with precision represented by `n`
 
